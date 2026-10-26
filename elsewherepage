@@ -1,1 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ELSEWHERE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#ece3cf;--paper2:#f3ecda;--ink:#1c1b19;--mute:#5c5a53;--gray:#a8a69e;--line:#1c1b19;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#171614;--paper2:#201f1c;--ink:#ece3cf;--mute:#a8a69e;--gray:#4a4944;--line:#ece3cf;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#171614;--paper2:#201f1c;--ink:#ece3cf;--mute:#a8a69e;--gray:#4a4944;--line:#ece3cf;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:19px/1.6 Spectral,Georgia,serif}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:Anton,Impact,'Arial Black',sans-serif;font-weight:400;margin:0;line-height:.95;text-transform:uppercase}
+.hero{border-bottom:3px solid var(--line);padding:56px 0 40px;overflow:hidden}
+.hero h1{font-size:clamp(56px,15.5vw,170px);letter-spacing:.01em}
+.hero .row{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:end;margin-top:28px}
+.tag{font-size:clamp(24px,3.4vw,38px);line-height:1.2;font-style:italic;margin:0}
+.hero p.s{margin:14px 0 0;color:var(--mute);max-width:46ch}
+.door{width:100%;height:auto;display:block}
+.btn{display:inline-block;margin-top:22px;background:var(--ink);color:var(--paper);padding:14px 26px;font:400 22px Anton,Impact,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:2px solid var(--ink)}
+.btn:hover{background:var(--paper);color:var(--ink)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+section{padding:64px 0;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(40px,7vw,76px);margin-bottom:28px}
+.mission{font-size:clamp(22px,3vw,30px);line-height:1.4;max-width:30em}
+.rules{list-style:none;margin:0;padding:0}
+.rules li{font:400 clamp(26px,4.6vw,48px)/1.1 Anton,Impact,sans-serif;text-transform:uppercase;padding:16px 0;border-top:1px solid var(--line)}
+.rules li span{display:block;font:400 17px/1.5 Spectral,Georgia,serif;text-transform:none;color:var(--mute);margin-top:6px;max-width:52ch}
+.fm{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:8px 40px;padding:20px 0;border-top:1px solid var(--line)}
+.fm h3{font-size:clamp(26px,3.4vw,38px)}
+.fm .when{font-style:italic;color:var(--mute);font-size:16px;margin-top:6px;display:block;font-family:Spectral,serif;text-transform:none}
+.fm p{margin:0}
+.crew{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:2px solid var(--line)}
+.crew div{padding:22px 20px 26px;border:1px solid var(--line);min-height:190px}
+.crew div:nth-child(2n){background:var(--ink);color:var(--paper)}
+.crew div:nth-child(2n) small{color:var(--gray)}
+.crew h3{font-size:34px;margin-bottom:10px}
+.crew small{display:block;font-size:16px;line-height:1.45;color:var(--mute)}
+.note{margin-top:18px;color:var(--mute);font-style:italic}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:72px 1fr;gap:12px;padding:18px 0;border-top:1px solid var(--line)}
+.steps li:before{content:counter(s);font:400 56px/1 Anton,Impact,sans-serif;color:var(--gray)}
+.steps b{font:400 26px/1.1 Anton,Impact,sans-serif;text-transform:uppercase;display:block;margin-bottom:4px}
+.join{background:var(--ink);color:var(--paper);border-bottom:0;padding:80px 0}
+.join h2{font-size:clamp(48px,11vw,128px)}
+.join p{max-width:44ch;font-size:22px}
+.join .btn{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.join .btn:hover{background:transparent;color:var(--paper)}
+footer{padding:22px 0 34px;background:var(--ink);color:var(--gray);font-size:15px}
+@media (max-width:760px){.hero .row,.fm{grid-template-columns:1fr}.crew{grid-template-columns:repeat(2,minmax(0,1fr))}.steps li{grid-template-columns:48px 1fr}.steps li:before{font-size:40px}.door{max-width:320px}}
+@media (max-width:460px){.crew{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){.hero h1{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}@keyframes rise{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+<h1>Elsewhere</h1>
+<div class="row">
+<div>
+<p class="tag">Go somewhere you haven’t been yet.</p>
+<p class="s">A small crew of curious students who learn strange new skills, chase odd ideas, and leave every week with something real.</p>
+<a class="btn" href="#join">Request a passport</a>
+</div>
+<svg class="door" viewBox="0 0 300 260" role="img" aria-label="A small figure stepping through a doorway in a black slab">
+<rect x="6" y="6" width="288" height="248" fill="var(--paper2)" stroke="var(--line)" stroke-width="2"/>
+<polygon points="70,6 200,6 250,40 250,254 70,254" fill="var(--ink)"/>
+<polygon points="96,50 190,76 190,254 96,254" fill="var(--gray)"/>
+<polygon points="96,200 150,170 190,190 190,254 96,254" fill="var(--paper2)"/>
+<polygon points="190,76 222,84 222,236 190,230" fill="var(--paper)" stroke="var(--line)" stroke-width="1.5"/>
+<circle cx="132" cy="150" r="7" fill="var(--ink)"/><path d="M122,160h20l4 34-6 0-2 24h-10l-2-24-6 0z" fill="var(--ink)"/>
+<polygon points="6,6 70,6 70,254 6,254" fill="var(--ink)"/>
+<g fill="var(--paper2)"><polygon points="14,16 40,14 34,40 18,38"/><polygon points="40,52 62,46 58,78 44,80"/><polygon points="14,70 30,64 32,100 16,102"/><polygon points="38,110 62,104 60,140 42,142"/><polygon points="14,130 28,126 30,170 14,172"/><polygon points="40,160 62,154 58,196 44,198"/><polygon points="14,196 32,190 34,236 16,238"/></g>
+<g fill="none" stroke="var(--line)" stroke-width="1"><path d="M250,60q20-10 40 0M250,90q20-10 40 0M250,120q20-10 40 0M250,150q20-10 40 0M250,180q20-10 40 0M250,210q20-10 40 0"/></g>
+</svg>
+</div></div></header>
+
+<main>
+<section><div class="wrap">
+<h2>The mission</h2>
+<p class="mission">Elsewhere brings together a small group of curious, driven students who would rather try than talk. We pick up unfamiliar skills, chase unconventional ideas, and turn what we learn into work you can hold, show, and argue about.</p>
+</div></section>
+
+<section><div class="wrap">
+<h2>Rules of the road</h2>
+<ul class="rules">
+<li>Make it real<span>Don’t just talk about an idea. Build a rough version by Sunday.</span></li>
+<li>Pass it on<span>Whatever you learn, you teach the rest of the crew.</span></li>
+<li>Hit the work, protect the person<span>Critique is sharp and specific. It never gets personal.</span></li>
+<li>Show up, don’t show off<span>Steady beats flashy. Consistency is the whole trick.</span></li>
+<li>Fail out loud<span>Every member gets room to experiment, flop, and try again.</span></li>
+</ul>
+</div></section>
+
+<section><div class="wrap">
+<h2>How we spend our time</h2>
+<div class="fm"><h3>The 7-day expedition<span class="when">Weekly</span></h3><p>Pick something you know nothing about. Seven days later, bring back a result: a tiny app, a printed zine, a song, a recipe that worked.</p></div>
+<div class="fm"><h3>Skill swap<span class="when">Every two weeks</span></h3><p>One member teaches the group something useful in 20 minutes, from lock picking to Figma shortcuts. Everyone leaves with a new trick.</p></div>
+<div class="fm"><h3>The impossible brief<span class="when">Monthly</span></h3><p>A creative challenge with brutal constraints: design a poster with no words, pitch a product in one sentence, build something from a single sheet of paper.</p></div>
+<div class="fm"><h3>The honest review<span class="when">After every expedition</span></h3><p>We swap work and give feedback in three parts: what landed, what confused us, what we would push further.</p></div>
+<div class="fm"><h3>Wanderday<span class="when">Monthly, new</span></h3><p>The whole crew goes somewhere unfamiliar: a workshop in another field, a stranger’s job, a lecture nobody here would pick. Then we write up what we saw.</p></div>
+<div class="fm"><h3>The monthly build<span class="when">Monthly</span></h3><p>One collective project made together, then published in The Dispatch: our crew zine of everyone’s best work and worst failures.</p></div>
+</div></section>
+
+<section><div class="wrap">
+<h2>The founding crew</h2>
+<div class="crew">
+
+<div><h3>The Maker</h3><small>Turns ideas into objects, prototypes, and working demos.</small></div>
+<div><h3>The Scout</h3><small>Finds the odd skill, tool, or place nobody has tried yet.</small></div>
+<div><h3>The Skeptic</h3><small>Asks the hard question that makes the work better.</small></div>
+<div><h3>The Herald</h3><small>Tells the story and keeps The Dispatch alive.</small></div>
+<div><h3>The Wildcard</h3><small>Does the thing nobody planned. Often the best part.</small></div>
+</div>
+<p class="note">Start with four to six people. These are flexible hats you can swap, not ranks.</p>
+</div></section>
+
+<section><div class="wrap">
+<h2>Your first week</h2>
+<ol class="steps">
+<li><div><b>Pick your first crew</b>Choose three to five people who are curious, dependable, and ready to contribute.</div></li>
+<li><div><b>Open a group chat</b>Keep it for questions, experiments, progress, and ideas worth chasing. No memes before noon.</div></li>
+<li><div><b>Hold the first gathering</b>Everyone brings one idea they have always wanted to explore but never acted on.</div></li>
+<li><div><b>Choose a seven-day challenge</b>Small enough to finish, strange enough that everyone wants in.</div></li>
+<li><div><b>Show the results</b>Each person shares what they made, what they learned, and what they would change. Earn your first passport stamp.</div></li>
+</ol>
+</div></section>
+
+<section class="join" id="join"><div class="wrap">
+<h2>Ready to go elsewhere?</h2>
+<p>Tell us what you are curious about and what you could teach. We read every application and reply within a week.</p>
+<a class="btn" id="formlink" href="https://docs.google.com/forms/d/e/1FAIpQLSfw6WnQ-zDgHsKfhLaYpLSb6Vhxnx5u6fmIijCPW6Z-rR8yhA/viewform?usp=dialog" target="_blank" rel="noopener">Fill out the form</a>
+</div></section>
+</main>
+<footer><div class="wrap">Elsewhere. A small club for people who make things.</div></footer>
+</body>
+</html>
 
